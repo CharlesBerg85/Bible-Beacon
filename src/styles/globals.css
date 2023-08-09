@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Importing Google Fonts for the 'Open Sans' font family */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Resetting margin, padding, and box-sizing for all elements */
+
+html {
+  font-size: 16px;
+}
+
+/* Setting the base font size for the HTML element */
+
+body {
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  background-color: #f5f5f5;
+}
+
+/* Styling the body element with a minimum height, font family, and background color */
+
+#root {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling the root element of the application, centering its content */
+
+.App {
+  width: 100%;
+  max-width: 800px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #333;
+  box-shadow: 0px 0px 15px gray;
+}
+
+/* Styling the main container element of the application, setting its width, height, flex properties, border, and box shadow */
+
+.Header,
+.Footer {
+  width: 100%;
+  background-color: #263238;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styling the header and footer elements with background color, padding, and flex properties */
+
+.Header h1 {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+/* Styling the header's h1 element with font size and color */
+
+.Header svg {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+/* Styling the header's SVG icons with font size and color */
+
+.Footer {
+  padding: 0.75rem;
+  display: grid;
+  place-content: center;
+}
+
+/* Styling the footer with padding and grid properties */
+
+.Nav {
+  width: 100%;
+  background-color: #455a64;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Styling the navigation element with background color and flex properties */
+
+.searchForm {
+  width: 80%;
+  padding: 1rem 0 0 0.75rem;
+}
+
+/* Styling the search form with width and padding */
+
+.searchForm input[type="text"] {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+/* Styling the search input field with font family, width, height, font size, padding, and border radius */
+
+.searchForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+/* Hiding the label for the search input field */
+
+.Nav ul {
+  color: #ffffff;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+/* Styling the unordered list in the navigation with color and flex properties */
+
+.Nav li {
+  padding: 1rem;
+}
+
+/* Styling the list items in the navigation with padding */
+
+.Nav li:hover,
+.Nav li:focus {
+  padding: 1rem;
+}
+
+/* Styling the list items in the navigation when hovered or focused */
+
+.Nav li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Styling the links in the navigation with color and removing text decoration */
+
+.Nav li:hover,
+.Nav li:focus,
+.Nav li:hover a,
+.Nav li:focus a {
+  background-color: #b0bec5;
+  color: #263238;
+}
+
+/* Styling the links in the navigation when hovered or focused, and their parent list items */
+
+.Nav li:hover a,
+.Nav li:focus a {
+  cursor: pointer;
+}
+
+/* Changing the cursor style for the links in the navigation when hovered or focused */
+
+.Home,
+.NewPost,
+.PostPage,
+.About,
+.Missing {
+  width: 100%;
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+/* Styling the content sections of the application with width, flex-grow, padding, and background color */
+
+.post {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid lightgray;
+}
+
+/* Styling individual posts with margin, padding, and border */
+
+.Home .post a {
+  text-decoration: none;
+}
+
+/* Removing text decoration for links within posts in the home section */
+
+.Home .post a,
+.Home .post a:visited {
+  color: #000000;
+}
+
+/* Styling links and visited links within posts in the home section with color */
+
+.post:first-child {
+  margin-top: 0;
+}
+
+/* Removing margin-top for the first post in a list */
+
+.post:last-child {
+  border-bottom: none;
+}
+
+/* Removing bottom border for the last post in a list */
+
+.postDate {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Styling the date within a post with font size and margin */
+
+.postBody {
+  margin: 1rem 0;
+}
+
+/* Styling the body of a post with margin */
+
+.newPostForm {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling the form for creating a new post with flex properties */
+
+.newPostForm label {
+  margin-top: 1rem;
+}
+
+/* Styling the labels in the new post form with margin-top */
+
+.newPostForm input[type='text'],
+.newPostForm textarea {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin-right: 0.25rem;
+  outline: none;
+}
+
+/* Styling the input fields and textarea in the new post form with font family, width, height, font size, padding, border radius, and margin */
+
+.newPostForm textarea {
+  height: 100px;
+}
+
+/* Styling the textarea in the new post form with a specific height */
+
+.newPostForm button {
+  margin-top: 1rem;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #0b9707;
+  color: #ffffff;
+}
+
+/* Styling the submit button in the new post form with margin, height, width, border radius, padding, font size, cursor, background color, and text color */
+
+.Missing p,
+.PostPage p,
+.NewPost p {
+  margin-top: 1rem;
+}
+
+/* Styling paragraphs in the Missing, PostPage, and NewPost components with margin-top */
+
+.PostPage button {
+  height: 48px;
+  min-width: 48px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #0b9707;
+}
+
+/* Styling buttons in the PostPage component with height, width, border radius, padding, margin-right, font size, color, cursor, background color, and text color */
+
+.deleteButton {
+  margin-top: 1rem;
+  background-color: red;
+}
+
+/* Styling the delete button with margin-top and background color */
+
+.editButton {
+  margin-top: 1rem;
+  background-color: #0b9707;
+}
+
+/* Styling the edit button with margin-top and background color */
+
+.statusMsg {
+  margin-top: 2rem;
+}
+
+/* Styling status messages with margin-top */
+
+@media only screen and (min-width: 610px) {
+  html {
+    font-size: 22px;
+  }
+
+  /* Increasing the font size for larger screens */
+
+  .Header h1 {
+    font-size: 2rem;
+  }
+
+  /* Increasing the font size for the header's h1 element */
+
+  .Nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Changing the flex properties for the navigation element on larger screens */
+
+  .Nav ul {
+    text-align: right;
+  }
+
+  /* Aligning the unordered list to the right in the navigation on larger screens */
+
+  .searchForm {
+    width: 50%;
+    padding: 0.5rem 0;
+  }
+
+  /* Adjusting the width and padding for the search form on larger screens */
+
+  .searchForm input[type='text'] {
+    margin-left: 0.5rem;
+  }
+
+  /* Adjusting the margin for the search input field on larger screens */
+
+  .newPostForm textarea {
+    height: 300px;
+  }
+
+  /* Adjusting the height of the textarea in the new post form on larger screens */
+}
+
+@media only screen and (min-width: 992px) {
+  .Header svg {
+    font-size: 3rem;
+  }
+
+  /* Increasing the font size for the header's SVG icons on larger screens */
+}
+
