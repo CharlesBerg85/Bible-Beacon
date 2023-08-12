@@ -1,17 +1,22 @@
-import Nav from '../components/Nav'; // Update the path accordingly
-import Header from '../components/Header'; // Update the path accordingly
-import Footer from '../components/Footer'; // Update the path accordingly
-import '../styles/globals.css'; // Your global CSS file
-import { AppProps } from 'next/app';
+import Nav from "../components/Nav";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import "../styles/globals.css";
+import { AppProps } from "next/app";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div>
-      <Nav />
-      <Header title={'Faithful Reflections'} />
-      <Component {...pageProps} />
-      <Footer />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
+        <Nav />
+        <Header title={"Faithful Reflections"} />
+        <Component {...pageProps} />
+        <Footer />
+      </div>
+    </QueryClientProvider>
   );
 }
 

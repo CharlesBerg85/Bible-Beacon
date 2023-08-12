@@ -43,7 +43,7 @@ function Index() {
   }, []);
 
   return (
-    <div className="App">
+    <div className='App'>
       {/* Pass the isLoading, fetchError, and posts props to the Home component */}
       <Home isLoading={isLoading} fetchError={fetchError} posts={posts} />
     </div>

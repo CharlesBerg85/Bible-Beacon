@@ -21,7 +21,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
   background-color: #f5f5f5;
 }
 
@@ -42,10 +41,11 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   border: 1px solid #333;
   box-shadow: 0px 0px 15px gray;
+  margin: 0 auto;
 }
 
 /* Styling the main container element of the application, setting its width, height, flex properties, border, and box shadow */

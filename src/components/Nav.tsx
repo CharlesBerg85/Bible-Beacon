@@ -64,7 +64,7 @@ const Nav = () => {
             {/* Navigation links */}
             <ul>
                 <li><Link href="/">Home</Link></li>
-                <li><Link href="/post">Post</Link></li>
+                <li><Link href="/newpost">Post</Link></li>
                 <li><Link href="/about">About</Link></li>
             </ul>
         </nav>
