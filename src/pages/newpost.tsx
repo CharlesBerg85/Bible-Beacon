@@ -1,34 +1,37 @@
-import { useId, useState } from 'react';
-import axios from 'axios';
-import { format } from 'date-fns';
-import { useRouter } from 'next/router';
+import React, { useState } from "react";
+import { format } from "date-fns";
+import { useRouter } from "next/router";
+import { db } from "../../firebase"; // Import the Firestore instance from your firebase.js
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 const NewPost = () => {
-  // State for storing the post title and body
   const [postData, setPostData] = useState({
-    title: '',
-    body: '',
+    title: "",
+    body: "",
   });
 
-  // Navigation hook from next/router
   const router = useRouter();
 
-  // Handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    const { title, body } = postData;
     e.preventDefault();
-    // Generating a new unique ID for the post
-    const id = useId()
-    const datetime = format(new Date(), 'MMMM dd, yyyy pp');
-    const newPost = { id, title: title, datetime, body: body };
+
+    const { title, body } = postData;
+    const datetime = format(new Date(), "MMMM dd, yyyy pp");
 
     try {
-      // TODO: Send the new post data to firebase instead of localhost
-      await axios.post('http://localhost:3000/posts', newPost);
+      const firestore = getFirestore();
+
+      // Use Firestore to add a new document to the 'posts' collection
+      await addDoc(collection(firestore, "posts"), {
+        title: title,
+        body: body,
+        datetime: datetime,
+      });
+
       // Navigate back to the home page
-      router.push('/');
+      router.push("/");
     } catch (error: unknown) {
-      console.error('Error saving post:', (error as Error).message);
+      console.error("Error saving post:", (error as Error).message);
       // Handle any error that occurs while saving the post
     }
   };

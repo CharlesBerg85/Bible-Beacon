@@ -34,13 +34,13 @@ const Home: React.FC<HomeProps> = () => {
 
   if (isLoading) return <p className="statusMsg">Loading posts...</p>;
   if (error) {
-    console.log(error);
+    console.log("Error object:", error);
     return (
       <>
         <p className="statusMsg" style={{ color: "red" }}>
           There was an error fetching posts
         </p>
-        {error}
+        <p>Error Details: {JSON.stringify(error)}</p>
       </>
     );
   }
